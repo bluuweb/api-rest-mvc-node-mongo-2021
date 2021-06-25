@@ -3,6 +3,13 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 require('dotenv').config()
 
+exports.validar = (req, res) => {
+    res.json({
+        errors: false,
+        msg: "token válido"
+    })
+}
+
 exports.signup = async(req, res) => {
     try {
 

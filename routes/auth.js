@@ -4,6 +4,7 @@ const {body} = require('express-validator')
 const authController = require('../controllers/authController')
 
 const validarBody = require('../middleware/validarBody')
+const validarToken = require('../middleware/validarToken')
 
 
 // /api/auth/signup
@@ -20,5 +21,7 @@ router.post('/login',[
     body('password', '6 o mas carácteres').isLength({min: 6}),
     validarBody
 ],authController.login)
+
+router.get('/validar', validarToken, authController.validar)
 
 module.exports = router
