@@ -22,6 +22,7 @@ router.post('/login',[
     validarBody
 ],authController.login)
 
+// api/auth/validar
 router.get('/validar', validarToken, authController.validar)
 
 module.exports = router
